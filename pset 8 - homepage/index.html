@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <link href="header/header_styles.css" rel="stylesheet">
+        <script src="header/header.js"></script>
+        <link href="web_banner/web_banner_styles.css" rel="stylesheet">
+        <link href="main/main_styles.css" rel="stylesheet">
+        <script src="main/main.js"></script>
+        <link href="footer/footer_styles.css" rel="stylesheet">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>My Webpage</title>
+    </head>
+
+    <body>
+        <div class="grid-container">
+            <header>
+                <nav>
+                    <ul class="sidebar">
+                        <li onclick=closeSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black">
+                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg></a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="project/project.html">Project</a></li>
+                        <li><a href="kakuji/kakuji.html">Kakuji</a></li>
+                        <li><a href="#">Climbing</a></li>
+                        <li><a href="aboutme/aboutme.html">About me</a></li>
+                    </ul>
+                    <ul class="headerNavContainer">
+                        <li><a href="index.html"><img id="logo" src="image/image/HK_Wordie_long(b).svg" alt="HK Wordie"></a></li>
+                        <li class="hideOnMobile"><a href="index.html">Home</a></li>
+                        <li class="hideOnMobile"><a href="project/project.html">Project</a></li>
+                        <li class="hideOnMobile"><a href="kakuji/kakuji.html">Kakuji</a></li>
+                        <li class="hideOnMobile"><a href="#">Climbing</a></li>
+                        <li class="hideOnMobile"><a href="aboutme/aboutme.html">About me</a></li>
+                        <li class="menu" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black">
+                            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                        </svg></a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="webBanner">
+                <img src="image/image/my_name(rec).svg" alt="Web banner">
+                <div class="slogan">
+                    <h1>Perseverance, Courage, Determination</h1>
+                </div>
+            </div>
+            <main class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3 class="text-center">My Aspect of Life</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card-group">
+                            <div class="card m-2 border border-secondary">
+                                <a href="project/project.html">
+                                        <img src="image/image/coding.png" class="card-img-top object-fit-sm-contain my_image border-bottom border-secondary" alt="project">
+                                        <div class="card-body">
+                                            <h4 class="card-title text-center">Project</h4>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="card m-2 border border-secondary">
+                                    <a href="#">
+                                        <img src="image/image/bouldering.png" class="card-img-top object-fit-sm-contain my_image border-bottom border-secondary" alt="climbing">
+                                        <div class="card-body">
+                                            <h4 class="card-title text-center">Climbing</h4>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="card m-2 border border-secondary">
+                                    <a href="kakuji/kakuji.html">
+                                        <img src="image/image/HK_Wordie_long(b).svg" class="card-img-top object-fit-sm-contain my_image border-bottom border-secondary" alt="Kakuji">
+                                        <div class="card-body">
+                                            <h4 class="card-title text-center">Kakuji</h4>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer>
+                    <div class="footer_logo">
+                        <img src="image/image/HK_Wordie_logo(w).svg" alt="HK Wordie">
+                    </div>
+                    <div class="footer_connect">
+                        <h4>Connect with me</h4>
+                        <li>Aemon Chau</li>
+                        <li>hello@reallygreatsite.com</li>
+                        <li>+123-456-7890</li>
+                    </div>
+                    <div class="footer_icon">
+                        <a href="https://www.instagram.com/hk_wordie?igsh=MWx6Nm56dmhrbWVpZA%3D%3D&utm_source=qr"><img id="instagram" src="image/logo/ig-white.svg" alt="instagram icon"></a>
+                        <a href="https://www.linkedin.com/in/aemon-chau-63627917b/"><img id="linkedin" src="image/logo/linkedin.svg" alt="linkedIn icon"></a>
+                        <a href="https://github.com/Aemon0722"><img id="github" src="image/logo/github-white.svg" alt="github icon"></a>
+                    </div>
+                </footer>
+            </div>
+        </body>
+
+    </html>

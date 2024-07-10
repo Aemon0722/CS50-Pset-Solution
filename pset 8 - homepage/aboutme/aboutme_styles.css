@@ -1,0 +1,16 @@
+main{
+    grid-row: 3;
+}
+
+.self-intro h2{
+    font-size: calc(1.3rem + 3.3vw);
+    padding-top: 30px;
+}
+
+main span{
+    font-weight: bold;
+}
+
+.self-intro p{
+    font-size: calc(0.5rem + 0.8vw);
+}

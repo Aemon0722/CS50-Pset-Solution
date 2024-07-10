@@ -1,0 +1,37 @@
+.webBanner{
+    grid-row: 2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.webBanner img{
+    position: relative;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.slogan{
+    position: absolute;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.slogan h1{
+    font-size: calc(1.3rem + 3.3vw);
+}
+
+.slogan p{
+    padding: 0 1rem;
+}
+
+@media screen and (min-width: 1200px) {
+    .slogan h1{
+      font-size: 4.5rem;
+    }
+}

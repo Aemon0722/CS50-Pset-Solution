@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            // make sure all html is ready before running the script
+            document.addEventListener("DOMContentLoaded", function(){
+
+                // let choices equal to the array of class choice
+                let choices = document.querySelectorAll(".choice");
+                let current;
+                // as selectorALL return an array, we need to access individual element with forEach
+                choices.forEach(function(choice){
+                    //When the current choice is clicked
+                    choice.addEventListener("click", function(){
+                        // if another choice was chosen after current choice is clicked
+                        if(current !== undefined && current != choice){
+                                // update previous choice background to default
+                                current.style.background ="";
+                            }
+                        // if current choice contains a class correct, which is the correct choice
+                        if(choice.classList.contains("correct")){
+                            // update the buttom background to green
+                            choice.style.background = "green";
+                            // Provide mc feedback with correct
+                            document.querySelector("#mcFeedback").innerHTML = "Correct";
+                            current = choice;
+                        }
+                        // the currenct choice is incorrect
+                        else{
+                            choice.style.background = "red";
+                            document.querySelector("#mcFeedback").innerHTML = "Incorrect";
+                            current = choice;
+                        }
+                    })
+                })
+                let answer = document.querySelector("input");
+                let check = document.querySelector("#check");
+                // When the check button is clicked
+                check.addEventListener("click", function(){
+                    //if the answer is correct(case insensitive)
+                    if (answer.value.toUpperCase() === "LONDON"){
+                        answer.style.background = "green";
+                        document.querySelector("#ansFeedback").innerHTML = "Correct";
+                    }
+                    else{
+                        answer.style.background = "red";
+                        document.querySelector("#ansFeedback").innerHTML = "Incorrect";
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <!-- TODO: Add multiple choice question here -->
+                <hr3>Traditionally, mozzarella cheese is made from the milk of which Animal?</hr3>
+                <br>
+                <button class="choice incorrect">A) Sheep</button>
+                <button class="choice incorrect">B) Goat</button>
+                <button class="choice incorrect">C) Moose</button>
+                <button class="choice correct">D) Buffalo</button>
+                <p id="mcFeedback"> </p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <!-- TODO: Add free response question here -->
+                <hr3>What is the capital of England?</hr3>
+                <br>
+                <input type="text" placeholder="answer">
+                <button id="check">Check Answer</button>
+                <p id="ansFeedback"> </p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+/* set the header as the first row of the gird*/
+header{
+    position: sticky;
+    max-height: 70px;
+    z-index: 998;
+    top: 0;
+    grid-row: 1;
+    background-color: white;
+    box-shadow: 3px 3px 5px 1px rgb(0, 0, 0, 0.2);
+    font-weight: 600;
+}
+
+nav ul{
+    list-style: none;
+    width: 100%
+}
+
+.headerNavContainer{
+    background-color: white;
+    display: flex;
+    /* make items start on the left hand side */
+    justify-content: flex-end;
+    /* make items align on the center */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+#logo{
+    height: 30px;
+    /* make the cursor become pointer, which shows user it is clickable */
+    cursor: pointer;
+}
+
+nav li{
+    height: 70px;
+}
+
+nav a{
+    height: 100%;
+    /* make the item has some spacing on the side */
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black
+}
+
+/* when specifying the element within the list, it makes the element related with other list element */
+nav li:first-child{
+    /* it push the element to the left by adding margin on the right */
+    margin-right: auto;
+    padding-left: 0;
+}
+
+.sidebar{
+    position: fixed; /* when position is fixed, it will be out of the document, meaning flex or grid those layout won't affect it */
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    padding: 0;
+    z-index: 999; /*make it always on top of other element*/
+    background-color: white;
+    box-shadow: -10px 0 10px rgb(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.sidebar li{
+    width: 100%;
+}
+
+.sidebar a:hover{
+    width: 100%;
+    background-color: #f0f0f0;
+}
+
+/* make it not display on the screen */
+.menu{
+    display: none;
+}
+
+/* when media is less than 800px width */
+@media screen and (max-width: 800px){
+    /* make all elements have this class disappear on the screen */
+    .hideOnMobile{
+        display: none;
+    }
+    /* make the menu icon appear on the screen */
+    .menu{
+        display: block;
+    }
+}
+
+

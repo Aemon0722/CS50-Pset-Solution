@@ -1,0 +1,8 @@
+main{
+    grid-row: 3;
+}
+
+main h3{
+    font-size: calc(1rem + 2.5vw);
+    padding-top: 1rem;
+}
