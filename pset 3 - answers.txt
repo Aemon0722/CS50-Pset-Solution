@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: When I timed sort1 with sorted text files, it is the fastest among 3 sort. As bubble sort is Ω(𝑛) in the best case, which is the fastest among
+selection sort and merge sort, therefore it should be bubble sort if it is the fastest when running sorted file.
+sort2 uses: Merge Sort
+
+How do you know?: It is slightly slower than bubble sort but faster than selection sort
+
+sort3 uses: Selection sort
+
+How do you know?: It is the slowest when running sorted files
