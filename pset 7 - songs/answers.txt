@@ -1,0 +1,10 @@
+Question 1:
+
+I would describle the audio aura as quite energetic and active as the average energy and danceability of top 100 song is around 0.66 and 0.72 respectively.
+However, the valence is quite mixed as its valence only have around 0.48
+
+Question 2:
+I think danceability and energy are more correlated as song with strong energy are easier to incite people to dance. However, valence related to the music positivity,
+which may not have a high correlation with energy as energy with danceability, or sometimes could contradict with enery and danceability.
+As a result, there may be a profile that the listener tend to listen with sad or angry song but have a high energy and danceability. I will propose to include the weight of
+the most play song in the calculation, the higher the rank, the higher the weight of that song is. This will better reflect the listener audio aura.
