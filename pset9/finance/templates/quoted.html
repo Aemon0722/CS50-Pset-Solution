@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ symbol }}
+{% endblock %}
+
+{% block main %}
+<form action="/quote" method="post">
+    <input id="quote" class="form-control" name="symbol" autocomplete="off" autofocus placeholder="Search Symbol" type="text">
+</form>
+
+<h4 class="pt-5 text-start">Result:</h4>
+    <div class="table-responsive-sm text-start">
+        <table class="table">
+            <tbody>
+                    <tr>
+                        <th scope="col"> Symbol </td>
+                        <th scope="col"> Price </td>
+                    </tr>
+                    <tr>
+                        <td> {{ symbol }} </td>
+                        <td> {{ usd(price) }} </td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock%}

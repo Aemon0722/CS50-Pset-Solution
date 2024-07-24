@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+<h3 class="p-2"> Transaction History</h3>
+
+<!-- Stock Portfolio table-->
+{% if history|length > 0%}
+
+<div class="table-responsive-sm text-start">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Action</th>
+                <th scope="col">Date/Time</th>
+                <th scope="col">Instrument</th>
+                <th scope="col">Transaction Price</th>
+                <th scope="col">Position</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for transaction in history%}
+                {% if transaction.quantity > 0 %}
+                    <tr class="buy">
+                        <td>Buy</td>
+                {% else %}
+                    <tr class="sell">
+                        <td>sell</td>
+                {% endif %}
+                        <td>{{ transaction.date_time }}</td>
+                        <td>{{ transaction.symbol }}</td>
+                        <td>{{ usd(transaction.t_price) }}</td>
+                        <td>{{ transaction.quantity }}</td>
+                    </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endif%}
+{% endblock%}

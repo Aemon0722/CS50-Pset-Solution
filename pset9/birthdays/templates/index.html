@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Birthdays</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Birthdays</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Add a Birthday</h2>
+                <!-- TODO: Create a form for users to submit a name, a month, and a day -->
+
+                <form action="/" method="post">
+                    <!-- input for name-->
+                    <input name="name" type="text" pattern="[A-Za-z]+" autofocus auto-complete="off" placeholder="Name">
+                    <label for="birthday"> Birthday:</label>
+                    <!-- input for birthday-->
+                    <input id="birthday" type="date" name="birthday">
+                    <button type="submit">Add</button>
+                    <P>{{ message }}</P>
+                </form>
+                <br>
+                <form action="/search">
+                    <input name="q" autocomplete="off" autofocus placeholder="Search" type="text">
+                </form>
+            </div>
+
+
+            <div class="section">
+
+                <h2>All Birthdays</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Birthday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                        {%for people in rows%}
+                         <tr>
+                            <td>{{ people.name }}</td>
+                            <td>{{ people.day }}/{{ people.month }}</td>
+                         </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

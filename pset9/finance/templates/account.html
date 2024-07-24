@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <div class="row py-4 border-bottom">
+        <div class="col text-start">
+            <h1> {{ username }}'s Account</h1>
+        </div>
+    </div>
+    <div class="row py-2 g-3">
+        <div class="col-sm-4 text-start  d-flex flex-column">
+            <div class="p-2">Account details</div>
+        </div>
+        <div class="col-sm-8 text-start d-flex flex-column">
+            <div>
+                <div class="p-2" style="background-color: #E9E4E3">Account</div>
+                <div class="p-2 d-flex justify-content-between">
+                    <span>Account name: {{ username}}</span>
+                    <form action="/password">
+                        <button type="submit" class="btn btn-secondary btn-sm">change password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock%}

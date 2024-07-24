@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+<h3 class="p-2"> {{ username }}'s Porfolio</h3>
+
+<!-- Stock Portfolio table-->
+<div class="table-responsive-sm text-start">
+    <table class="table table-hover">
+        <caption style="caption-side: top; text-align: left">Financial Instrument</caption>
+        <thead>
+            <tr>
+                <th scope="col">Instrument</th>
+                <th scope="col">Position</th>
+                <th scope="col">Current Price</th>
+                <th scope="col">Value</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% if portfolio|length > 0%}
+                {% for instrument in portfolio%}
+                    {% if instrument["SUM(quantity)"] > 0%}
+                    <tr>
+                        <td>{{ instrument.symbol }}</td>
+                        <td>{{ instrument["SUM(quantity)"] }}</td>
+                        <td>{{ usd(instrument.price) }}</td>
+                        <td>{{ usd(instrument.value) }}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            {% endif%}
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th scope="row">Total</th>
+                <td></td>
+                <td></td>
+                <td>{{ instrument_total }}</td>
+            </tr>
+        </tfoot>
+
+    </table>
+</div>
+
+<!-- Cash table-->
+<div class="table-responsive-sm text-start">
+    <table class="table table-hover">
+        <caption style="caption-side: top; text-align: left">Cash</caption>
+        <tbody>
+            <tr>
+                <th scope="row">$USD</th>
+                <td>{{ cash }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Total Balance-->
+<div class="table-responsive-sm text-start">
+    <table class="table table-hover">
+        <caption style="caption-side: top; text-align: left">Balance</caption>
+        <tbody>
+                <tr>
+                    <th scope="row"> Total </th>
+                    <td></td>
+                    <td></td>
+                    <td>{{total_liquidity}}</td>
+                </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock%}
